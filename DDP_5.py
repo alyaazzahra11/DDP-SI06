@@ -42,3 +42,4 @@ match luas_bangun_datar :
 
     case _ :
         print("Anda salah pilih")
+

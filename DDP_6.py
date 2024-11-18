@@ -13,7 +13,6 @@ while index <= len(numbers):
         print(numbers[index])
     index += 1
 
-
 # Buat lah output dari menggunakan bahasa pemprograman python dengan : 
 print('n====== No 2 ======')
 
