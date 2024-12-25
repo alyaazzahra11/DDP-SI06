@@ -1,0 +1,47 @@
+import streamlit as st
+
+# CSS to streamlit
+
+st.markdown(
+    """
+    <style>
+    /* Warna latar belakang aplikasi */
+    .stApp {
+        background-color: #fffff;
+    }
+
+    /* Sidebar styling */
+    [data-testid="stSidebar"] {
+        background-color: #c8b2d8;
+        color: white;
+        padding: 5px;
+    }
+
+    /* Teks pada sidebar */
+    [data-testid="stSidebar"] * {
+        color: white !important;
+        font-size: 16px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
+dashboard = st.Page("./fitur/dashboard.py", title="Dashboard")
+nabung = st.Page("./fitur/nabung.py", title="Menabung")
+penarikan = st.Page("./fitur/penarikan.py", title="Penarikan")
+
+pg = st.navigation(
+    {
+        "Menu Utama" : [dashboard],
+        "Transaksi" : [nabung, penarikan],
+    }
+)
+
+if "total_semua" not in st.session_state:
+    st.session_state["total_semua"] = []
+
+pg.run()
